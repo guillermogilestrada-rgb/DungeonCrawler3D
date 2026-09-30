@@ -1,0 +1,7 @@
+27eceb1 Importada base del usuario sin historial Git adjunto
+81de933 Implementado control en primera persona, linterna y HUD ajustable
+ead811f Construida mina modular con salas conectadas y mirador elevado
+3fb4c3c Revisadas referencias y recorrido; añadidas herramientas y guía de prueba
+5713d4f Corregido carácter extra en el bloque de vértices del cristal
+031975d Añadida vagoneta activable con E y barrera rompible para abrir la cámara de hielo
+99806ab Documentadas pruebas de importación y recorrido de la vagoneta
