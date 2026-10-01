@@ -4,6 +4,7 @@ public class PlayerMovement : MonoBehaviour
 {
     Rigidbody rb; // Los métodos, clases y funciones en PascalCase || Las variables (rb, movementDirection), nunca empiezan con mayúscula. camelCase
     [SerializeField] Vector3 movementDirection; // SeralizeField hace que la variable siga siendo privada (no pueden editar el valor otros scripts) pero aparece en el editor
+    [Header("Movement Properties")]
     [SerializeField] private float horizontalMovement;
     [SerializeField] private float forwardMovement;
     [SerializeField] private float movementVelocity = 15;
