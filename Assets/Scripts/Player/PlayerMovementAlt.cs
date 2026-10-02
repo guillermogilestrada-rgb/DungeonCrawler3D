@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PlayerMovementAlt : MonoBehaviour
 {
-    float moveSpeed;
+    [SerializeField] float moveSpeed;
     private CharacterController chController;
 
     void Start()
@@ -25,15 +25,20 @@ public class PlayerMovementAlt : MonoBehaviour
 
         Vector3 input = new Vector3(horizontal, 0, vertical);
 
-        //6
-        chController.Move(input * Time.deltaTime);
+        // 4
+        Vector3 targetVelocity = input * moveSpeed;
+
+        input = Vector3.ClampMagnitude(input, 1.0f);
+
+        // 6
+        chController.Move(targetVelocity * Time.deltaTime);
         throw new NotImplementedException();
     }
 }
 
 
 // 1. Recoger el input
-// 2. Obtener las coords o direcciones de l acamara
+// 2. Obtener las coords o direcciones de la camara
 // 3. Calcular la direccion del movimiento
 // 4. Calculos de la velocidad
 // 5. Gamefeel: Aceleración, frenos, cambios de direccion
