@@ -10,6 +10,8 @@ namespace FrozenMine
         [SerializeField, Min(0.5f)] private float travelDistance = 12f;
         [SerializeField, Min(0.1f)] private float speed = 3f;
         [SerializeField, Min(0.1f)] private float acceleration = 2f;
+        [Tooltip("Velocidad y aceleración extra por pendiente en bajada (0 = sin efecto, como en vías planas).")]
+        [SerializeField, Min(0f)] private float downhillBoost = 0f;
         [Header("Ruedas (opcional)")]
         [SerializeField] private Transform[] wheels;
         [SerializeField, Min(0.05f)] private float wheelRadius = 0.28f;
@@ -42,7 +44,9 @@ namespace FrozenMine
         private void FixedUpdate()
         {
             if (!activated || IsFinished) return;
-            velocity = Mathf.MoveTowards(velocity, speed, acceleration * Time.fixedDeltaTime);
+            float slope = Mathf.Max(0f, -direction.y); // seno de la pendiente en bajada
+            velocity = Mathf.MoveTowards(velocity, speed + downhillBoost * slope,
+                (acceleration + downhillBoost * slope) * Time.fixedDeltaTime);
             float step = Mathf.Min(velocity * Time.fixedDeltaTime, travelDistance - travelled);
             Vector3 center = body.position + body.rotation * hitbox.center;
             Vector3 half = Vector3.Scale(hitbox.size * 0.5f, transform.lossyScale);
