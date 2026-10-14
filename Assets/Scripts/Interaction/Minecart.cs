@@ -25,6 +25,7 @@ namespace FrozenMine
         private bool activated;
         private bool finished;
         private bool blocked;
+        public bool CanActivate => !activated;
 
         private void Awake()
         {

@@ -148,23 +148,12 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1007}
-  - {fileID: 1039}
-  - {fileID: 1057}
-  - {fileID: 1109}
-  - {fileID: 1161}
-  - {fileID: 1191}
-  - {fileID: 1211}
-  - {fileID: 1255}
-  - {fileID: 5000000004}
-  - {fileID: 5000000008}
-  - {fileID: 5000000012}
-  - {fileID: 5000000016}
-  - {fileID: 5000000020}
-  - {fileID: 5000000024}
-  - {fileID: 5000000028}
-  - {fileID: 5000000032}
-  - {fileID: 5000000036}
+  - {fileID: 6000000004}
+  - {fileID: 6000000008}
+  - {fileID: 6000000012}
+  - {fileID: 6000000016}
+  - {fileID: 6000000020}
+  - {fileID: 6000000024}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1002
@@ -292,7 +281,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1007}
   m_Layer: 0
-  m_Name: 01_Entrada
+  m_Name: Entrada
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -326,7 +315,7 @@ Transform:
   - {fileID: 1033}
   - {fileID: 1035}
   - {fileID: 1037}
-  m_Father: {fileID: 1001}
+  m_Father: {fileID: 6000000004}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1008
 PrefabInstance:
@@ -1268,7 +1257,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1039}
   m_Layer: 0
-  m_Name: 02_Galeria
+  m_Name: Galeria
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1295,7 +1284,7 @@ Transform:
   - {fileID: 1051}
   - {fileID: 1053}
   - {fileID: 1055}
-  m_Father: {fileID: 1001}
+  m_Father: {fileID: 6000000004}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1040
 PrefabInstance:
@@ -1803,7 +1792,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1057}
   m_Layer: 0
-  m_Name: 03_PozoCentral
+  m_Name: PozoCentral
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1847,7 +1836,7 @@ Transform:
   - {fileID: 1103}
   - {fileID: 1105}
   - {fileID: 1107}
-  m_Father: {fileID: 1001}
+  m_Father: {fileID: 6000000008}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1058
 PrefabInstance:
@@ -3409,7 +3398,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1109}
   m_Layer: 0
-  m_Name: 04_CamaraHielo
+  m_Name: CamaraHielo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3452,7 +3441,7 @@ Transform:
   - {fileID: 1155}
   - {fileID: 1157}
   - {fileID: 1159}
-  m_Father: {fileID: 1001}
+  m_Father: {fileID: 6000000008}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1110
 PrefabInstance:
@@ -4952,7 +4941,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1161}
   m_Layer: 0
-  m_Name: 05_Almacen
+  m_Name: Almacen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4984,7 +4973,7 @@ Transform:
   - {fileID: 1183}
   - {fileID: 1185}
   - {fileID: 1189}
-  m_Father: {fileID: 1001}
+  m_Father: {fileID: 6000000008}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1162
 PrefabInstance:
@@ -5802,7 +5791,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1191}
   m_Layer: 0
-  m_Name: 06_Ascenso
+  m_Name: Ascenso
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5830,7 +5819,7 @@ Transform:
   - {fileID: 1205}
   - {fileID: 1207}
   - {fileID: 1209}
-  m_Father: {fileID: 1001}
+  m_Father: {fileID: 6000000012}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1192
 PrefabInstance:
@@ -6400,7 +6389,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1211}
   m_Layer: 0
-  m_Name: 07_Mirador
+  m_Name: Mirador
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6440,7 +6429,7 @@ Transform:
   - {fileID: 1249}
   - {fileID: 1251}
   - {fileID: 1253}
-  m_Father: {fileID: 1001}
+  m_Father: {fileID: 6000000012}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1212
 PrefabInstance:
@@ -7754,7 +7743,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1255}
   m_Layer: 0
-  m_Name: 08_Decoracion
+  m_Name: Decoracion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7828,7 +7817,7 @@ Transform:
   - {fileID: 1420}
   - {fileID: 1425}
   - {fileID: 1430}
-  m_Father: {fileID: 1001}
+  m_Father: {fileID: 6000000024}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1256
 PrefabInstance:
@@ -14239,7 +14228,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5000000004}
   m_Layer: 0
-  m_Name: 09_RampaEste
+  m_Name: RampaEste
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14274,7 +14263,7 @@ Transform:
   - {fileID: 5000000211}
   - {fileID: 5000000213}
   - {fileID: 5000000215}
-  m_Father: {fileID: 1001}
+  m_Father: {fileID: 6000000016}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5000000006
 GameObject:
@@ -14286,7 +14275,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5000000008}
   m_Layer: 0
-  m_Name: 10_SalaBaja
+  m_Name: SalaBaja
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14333,7 +14322,7 @@ Transform:
   - {fileID: 5000000267}
   - {fileID: 5000000269}
   - {fileID: 5000000271}
-  m_Father: {fileID: 1001}
+  m_Father: {fileID: 6000000016}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5000000010
 GameObject:
@@ -14345,7 +14334,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5000000012}
   m_Layer: 0
-  m_Name: 11_TunelCristal
+  m_Name: TunelCristal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14390,7 +14379,7 @@ Transform:
   - {fileID: 5000000345}
   - {fileID: 5000000347}
   - {fileID: 5000000349}
-  m_Father: {fileID: 1001}
+  m_Father: {fileID: 6000000016}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5000000014
 GameObject:
@@ -14402,7 +14391,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5000000016}
   m_Layer: 0
-  m_Name: 12_BalconCristal
+  m_Name: BalconCristal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14442,7 +14431,7 @@ Transform:
   - {fileID: 5000000361}
   - {fileID: 5000000363}
   - {fileID: 5000000365}
-  m_Father: {fileID: 1001}
+  m_Father: {fileID: 6000000016}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5000000018
 GameObject:
@@ -14454,7 +14443,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5000000020}
   m_Layer: 0
-  m_Name: 13_GaleriaOeste
+  m_Name: GaleriaOeste
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14489,7 +14478,7 @@ Transform:
   - {fileID: 5000000179}
   - {fileID: 5000000181}
   - {fileID: 5000000183}
-  m_Father: {fileID: 1001}
+  m_Father: {fileID: 6000000020}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5000000022
 GameObject:
@@ -14501,7 +14490,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5000000024}
   m_Layer: 0
-  m_Name: 14_TerrazaCristal
+  m_Name: TerrazaCristal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14540,7 +14529,7 @@ Transform:
   - {fileID: 5000000147}
   - {fileID: 5000000149}
   - {fileID: 5000000151}
-  m_Father: {fileID: 1001}
+  m_Father: {fileID: 6000000020}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5000000026
 GameObject:
@@ -14552,7 +14541,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5000000028}
   m_Layer: 0
-  m_Name: 15_PasoNorte
+  m_Name: PasoNorte
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14587,7 +14576,7 @@ Transform:
   - {fileID: 5000000091}
   - {fileID: 5000000093}
   - {fileID: 5000000095}
-  m_Father: {fileID: 1001}
+  m_Father: {fileID: 6000000020}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5000000030
 GameObject:
@@ -14599,7 +14588,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5000000032}
   m_Layer: 0
-  m_Name: 16_CamaraNorte
+  m_Name: CamaraNorte
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14639,7 +14628,7 @@ Transform:
   - {fileID: 5000000127}
   - {fileID: 5000000129}
   - {fileID: 5000000131}
-  m_Father: {fileID: 1001}
+  m_Father: {fileID: 6000000020}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5000000034
 GameObject:
@@ -14651,7 +14640,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5000000036}
   m_Layer: 0
-  m_Name: 17_Decoracion_Ampliacion
+  m_Name: Decoracion_Ampliacion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14722,7 +14711,7 @@ Transform:
   - {fileID: 5000000481}
   - {fileID: 5000000483}
   - {fileID: 5000000485}
-  m_Father: {fileID: 1001}
+  m_Father: {fileID: 6000000024}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &5000000038
 PrefabInstance:
@@ -31642,6 +31631,209 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
+--- !u!1 &6000000002
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6000000004}
+  m_Layer: 0
+  m_Name: 1_Acceso
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6000000004
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6000000002}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1007}
+  - {fileID: 1039}
+  m_Father: {fileID: 1001}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6000000006
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6000000008}
+  m_Layer: 0
+  m_Name: 2_Centro
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6000000008
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6000000006}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1057}
+  - {fileID: 1109}
+  - {fileID: 1161}
+  m_Father: {fileID: 1001}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6000000010
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6000000012}
+  m_Layer: 0
+  m_Name: 3_Mirador
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6000000012
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6000000010}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1191}
+  - {fileID: 1211}
+  m_Father: {fileID: 1001}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6000000014
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6000000016}
+  m_Layer: 0
+  m_Name: 4_AlaEste
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6000000016
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6000000014}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5000000004}
+  - {fileID: 5000000008}
+  - {fileID: 5000000012}
+  - {fileID: 5000000016}
+  m_Father: {fileID: 1001}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6000000018
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6000000020}
+  m_Layer: 0
+  m_Name: 5_AlaOeste
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6000000020
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6000000018}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5000000020}
+  - {fileID: 5000000024}
+  - {fileID: 5000000028}
+  - {fileID: 5000000032}
+  m_Father: {fileID: 1001}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6000000022
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6000000024}
+  m_Layer: 0
+  m_Name: 6_Decoracion
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6000000024
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6000000022}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1255}
+  - {fileID: 5000000036}
+  m_Father: {fileID: 1001}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
