@@ -12,7 +12,6 @@ namespace FrozenMine
         [Header("Referencias")]
         [SerializeField] private FirstPersonLook look;
         [SerializeField] private Transform spawnPoint;
-        [SerializeField] private DungeonHUD hud;
         [Header("Movimiento (metros / segundo)")]
         [SerializeField, Min(0.1f)] private float walkSpeed = 3.6f;
         [SerializeField, Min(0.1f)] private float runSpeed = 5.5f;
@@ -37,13 +36,12 @@ namespace FrozenMine
         private void Update()
         {
             if (transform.position.y < respawnBelowY) { Respawn(); return; }
-            bool captured = look != null && look.InputCaptured;
             Vector2 input = Vector2.zero;
             bool running = false;
             bool reset = false;
 #if ENABLE_INPUT_SYSTEM
             Keyboard keys = Keyboard.current;
-            if (keys != null && captured)
+            if (keys != null)
             {
                 input.x = (keys.dKey.isPressed || keys.rightArrowKey.isPressed ? 1f : 0f)
                         - (keys.aKey.isPressed || keys.leftArrowKey.isPressed ? 1f : 0f);
@@ -53,19 +51,15 @@ namespace FrozenMine
                 reset = keys.rKey.wasPressedThisFrame;
             }
 #elif ENABLE_LEGACY_INPUT_MANAGER
-            if (captured)
-            {
-                input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-                running = Input.GetKey(KeyCode.LeftShift);
-                reset = Input.GetKeyDown(KeyCode.R);
-            }
+            input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+            running = Input.GetKey(KeyCode.LeftShift);
+            reset = Input.GetKeyDown(KeyCode.R);
 #endif
             if (reset) { Respawn(); return; }
             input = Vector2.ClampMagnitude(input, 1f); // Diagonal sin velocidad extra.
             Vector3 target = (transform.right * input.x + transform.forward * input.y)
                            * (running ? runSpeed : walkSpeed);
-            if (!captured) planarVelocity = Vector3.zero;
-            else planarVelocity = Vector3.MoveTowards(planarVelocity, target, acceleration * Time.deltaTime);
+            planarVelocity = Vector3.MoveTowards(planarVelocity, target, acceleration * Time.deltaTime);
 
             if (controller.isGrounded && verticalVelocity < 0f) verticalVelocity = -2f;
             verticalVelocity = Mathf.Max(verticalVelocity + gravity * Time.deltaTime, -40f);
@@ -82,7 +76,6 @@ namespace FrozenMine
             verticalVelocity = 0f;
             controller.enabled = true;
             if (look != null) look.ResetPitch();
-            if (hud != null) hud.ResetJourney();
             Minecart.ResetPuzzle();
         }
 

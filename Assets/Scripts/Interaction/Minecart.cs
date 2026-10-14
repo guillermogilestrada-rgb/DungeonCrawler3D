@@ -23,11 +23,8 @@ namespace FrozenMine
         private float travelled;
         private float velocity;
         private bool activated;
-        public bool IsFinished { get; private set; }
-        public bool IsBlocked { get; private set; }
-        public bool CanActivate => !activated;
-        public string Prompt => CanActivate ? "[E] Activar vagoneta" :
-            IsFinished ? "Paso despejado" : IsBlocked ? "Deja libre la vía" : "Vagoneta en marcha";
+        private bool finished;
+        private bool blocked;
 
         private void Awake()
         {
@@ -39,11 +36,11 @@ namespace FrozenMine
             for (int i = 0; i < wheelRotations.Length; i++)
                 if (wheels[i] != null) wheelRotations[i] = wheels[i].localRotation;
         }
-        public void Activate() { if (CanActivate) activated = true; }
+        public void Activate() { activated = true; }
 
         private void FixedUpdate()
         {
-            if (!activated || IsFinished) return;
+            if (!activated || finished) return;
             float slope = Mathf.Max(0f, -direction.y); // seno de la pendiente en bajada
             velocity = Mathf.MoveTowards(velocity, speed + downhillBoost * slope,
                 (acceleration + downhillBoost * slope) * Time.fixedDeltaTime);
@@ -61,8 +58,8 @@ namespace FrozenMine
                 if (barrier == null || barrier.IsBroken)
                     solidDistance = Mathf.Min(solidDistance, hit.distance);
             }
-            IsBlocked = solidDistance <= step + 0.08f;
-            if (IsBlocked) { velocity = 0f; return; }
+            blocked = solidDistance <= step + 0.08f;
+            if (blocked) { velocity = 0f; return; }
             foreach (RaycastHit hit in hits)
             {
                 if (hit.collider.attachedRigidbody == body || hit.distance > step + 0.025f) continue;
@@ -74,14 +71,14 @@ namespace FrozenMine
             if (wheels != null)
                 foreach (Transform wheel in wheels)
                     if (wheel != null) wheel.Rotate(Vector3.up, step / wheelRadius * Mathf.Rad2Deg, Space.Self);
-            if (travelled >= travelDistance - 0.001f) { IsFinished = true; velocity = 0f; }
+            if (travelled >= travelDistance - 0.001f) { finished = true; velocity = 0f; }
         }
 
         public void ResetCart()
         {
             body.position = startPosition;
             travelled = velocity = 0f;
-            activated = IsFinished = IsBlocked = false;
+            activated = finished = blocked = false;
             for (int i = 0; i < wheelRotations.Length; i++)
                 if (wheels[i] != null) wheels[i].localRotation = wheelRotations[i];
         }
