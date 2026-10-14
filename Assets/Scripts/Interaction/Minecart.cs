@@ -10,6 +10,8 @@ namespace FrozenMine
         [SerializeField, Min(0.5f)] private float travelDistance = 12f;
         [SerializeField, Min(0.1f)] private float speed = 3f;
         [SerializeField, Min(0.1f)] private float acceleration = 2f;
+        [Tooltip("Velocidad y aceleración extra por pendiente en bajada (0 = sin efecto, como en vías planas).")]
+        [SerializeField, Min(0f)] private float downhillBoost = 0f;
         [Header("Ruedas (opcional)")]
         [SerializeField] private Transform[] wheels;
         [SerializeField, Min(0.05f)] private float wheelRadius = 0.28f;
@@ -21,11 +23,8 @@ namespace FrozenMine
         private float travelled;
         private float velocity;
         private bool activated;
-        public bool IsFinished { get; private set; }
-        public bool IsBlocked { get; private set; }
-        public bool CanActivate => !activated;
-        public string Prompt => CanActivate ? "[E] Activar vagoneta" :
-            IsFinished ? "Paso despejado" : IsBlocked ? "Deja libre la vía" : "Vagoneta en marcha";
+        private bool finished;
+        private bool blocked;
 
         private void Awake()
         {
@@ -37,12 +36,15 @@ namespace FrozenMine
             for (int i = 0; i < wheelRotations.Length; i++)
                 if (wheels[i] != null) wheelRotations[i] = wheels[i].localRotation;
         }
-        public void Activate() { if (CanActivate) activated = true; }
+        public bool CanPush => !activated;
+        public void Activate() { activated = true; }
 
         private void FixedUpdate()
         {
-            if (!activated || IsFinished) return;
-            velocity = Mathf.MoveTowards(velocity, speed, acceleration * Time.fixedDeltaTime);
+            if (!activated || finished) return;
+            float slope = Mathf.Max(0f, -direction.y); // seno de la pendiente en bajada
+            velocity = Mathf.MoveTowards(velocity, speed + downhillBoost * slope,
+                (acceleration + downhillBoost * slope) * Time.fixedDeltaTime);
             float step = Mathf.Min(velocity * Time.fixedDeltaTime, travelDistance - travelled);
             Vector3 center = body.position + body.rotation * hitbox.center;
             Vector3 half = Vector3.Scale(hitbox.size * 0.5f, transform.lossyScale);
@@ -57,8 +59,8 @@ namespace FrozenMine
                 if (barrier == null || barrier.IsBroken)
                     solidDistance = Mathf.Min(solidDistance, hit.distance);
             }
-            IsBlocked = solidDistance <= step + 0.08f;
-            if (IsBlocked) { velocity = 0f; return; }
+            blocked = solidDistance <= step + 0.08f;
+            if (blocked) { velocity = 0f; return; }
             foreach (RaycastHit hit in hits)
             {
                 if (hit.collider.attachedRigidbody == body || hit.distance > step + 0.025f) continue;
@@ -70,21 +72,21 @@ namespace FrozenMine
             if (wheels != null)
                 foreach (Transform wheel in wheels)
                     if (wheel != null) wheel.Rotate(Vector3.up, step / wheelRadius * Mathf.Rad2Deg, Space.Self);
-            if (travelled >= travelDistance - 0.001f) { IsFinished = true; velocity = 0f; }
+            if (travelled >= travelDistance - 0.001f) { finished = true; velocity = 0f; }
         }
 
         public void ResetCart()
         {
             body.position = startPosition;
             travelled = velocity = 0f;
-            activated = IsFinished = IsBlocked = false;
+            activated = finished = blocked = false;
             for (int i = 0; i < wheelRotations.Length; i++)
                 if (wheels[i] != null) wheels[i].localRotation = wheelRotations[i];
         }
         public static void ResetPuzzle()
         {
-            foreach (Minecart cart in Object.FindObjectsByType<Minecart>(FindObjectsSortMode.None)) cart.ResetCart();
-            foreach (BreakableBarricade barrier in Object.FindObjectsByType<BreakableBarricade>(FindObjectsSortMode.None)) barrier.Restore();
+            foreach (Minecart cart in Object.FindObjectsByType<Minecart>()) cart.ResetCart();
+            foreach (BreakableBarricade barrier in Object.FindObjectsByType<BreakableBarricade>()) barrier.Restore();
             Physics.SyncTransforms();
         }
         private void OnDrawGizmosSelected()

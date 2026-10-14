@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 1002}
   - component: {fileID: 1012}
   - component: {fileID: 1013}
-  - component: {fileID: 1014}
   m_Layer: 0
   m_Name: PF_Player_FirstPerson
   m_TagString: Player
@@ -326,8 +325,6 @@ MonoBehaviour:
   sensitivity: 0.1
   fieldOfView: 78
   pitchLimit: 85
-  invertY: 0
-  captureOnStart: 1
 --- !u!114 &1012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -342,7 +339,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: ''
   look: {fileID: 1011}
   spawnPoint: {fileID: 0}
-  hud: {fileID: 1014}
   walkSpeed: 3.6
   runSpeed: 5.5
   acceleration: 24
@@ -361,22 +357,4 @@ MonoBehaviour:
   m_Name: ''
   m_EditorClassIdentifier: ''
   viewCamera: {fileID: 1005}
-  look: {fileID: 1011}
   reach: 3
---- !u!114 &1014
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab513edfcbfe5dee8ea436bab061b9f3, type: 3}
-  m_Name: ''
-  m_EditorClassIdentifier: ''
-  look: {fileID: 1011}
-  motor: {fileID: 1012}
-  player: {fileID: 1001}
-  interactor: {fileID: 1013}
-  showHints: 1
